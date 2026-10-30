@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trầm Hương Vạn Thắng</title>
+<meta name="description" content="Trầm Hương Vạn Thắng – Làng nghề di sản Khánh Hòa. Nhang trầm, nụ trầm, thanh trầm, trầm cảnh chế tác thủ công từ trầm thật.">
+<link rel="icon" href="anh/logo-nau-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6efe2; --paper2:#efe4d0; --card:#fbf7ef;
+  --ink:#3b2a1f; --ink2:#6b5444; --mute:#8d7765;
+  --gold:#a8824a; --gold2:#c9a46a; --line:#e0d2bb;
+  --forest:#2e4636; --night:#1f1813;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Be Vietnam Pro',sans-serif;font-weight:300;line-height:1.8;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.3}
+.eyebrow{font-family:'Cormorant Garamond',serif;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-size:14px}
+section{padding:100px 0;position:relative}
+.title{text-align:center;max-width:720px;margin:0 auto 56px}
+.title h2{font-size:clamp(28px,4vw,42px);margin:8px 0 14px}
+.title p{color:var(--ink2)}
+.orn{display:flex;align-items:center;justify-content:center;gap:12px;margin:14px auto 0;color:var(--gold)}
+.orn:before,.orn:after{content:"";width:64px;height:1px;background:currentColor;opacity:.6}
+.orn img{width:18px;opacity:.85}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 32px;border:1px solid var(--gold);color:var(--ink);background:transparent;font-size:14px;letter-spacing:.1em;transition:.3s}
+.btn:hover{background:var(--gold);color:#fff}
+.btn.solid{background:var(--gold);color:#fff}
+.btn.solid:hover{background:var(--ink);border-color:var(--ink)}
+.btn.light{color:#fff;border-color:rgba(255,255,255,.7)}
+.btn.light:hover{background:#fff;color:var(--ink)}
+/* nền hoa văn mây */
+.cloud-bg{background-color:var(--paper2);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='90' viewBox='0 0 160 90'%3E%3Cg fill='none' stroke='%23a8824a' stroke-opacity='.13' stroke-width='1.2'%3E%3Cpath d='M10 60c0-11 9-20 20-20 3-12 14-20 26-20 15 0 27 12 27 27M30 60c0-6 5-11 11-11s11 5 11 11M90 80c0-9 7-16 16-16 2-10 11-17 21-17 12 0 22 10 22 22'/%3E%3C/g%3E%3C/svg%3E")}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.35s;color:#fff}
+header.solid{background:rgba(246,239,226,.97);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:44px;width:auto}
+.brand .w{display:none}
+header:not(.solid) .brand .b{display:none}
+header:not(.solid) .brand .w{display:block}
+.brand b{display:block;font-family:'Playfair Display',serif;font-weight:500;font-size:19px;letter-spacing:.03em;line-height:1.2}
+.brand small{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;opacity:.8}
+nav ul{display:flex;gap:26px;list-style:none;font-size:14px;align-items:center}
+nav a:hover{color:var(--gold2)}
+.nav-cta{padding:9px 20px;border:1px solid currentColor;font-size:13px;letter-spacing:.08em}
+.burger{display:none;background:none;border:0;color:inherit;font-size:28px;line-height:1}
+
+/* hero */
+.hero{height:100vh;min-height:620px;position:relative;overflow:hidden;color:#fff;padding:0}
+.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.08);transition:opacity 1.6s,transform 7s linear}
+.slide.on{opacity:1;transform:scale(1)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(25,17,11,.88) 0%,rgba(25,17,11,.7) 50%,rgba(25,17,11,.3) 100%),linear-gradient(0deg,rgba(25,17,11,.65),transparent 45%)}
+.hero h1,.hero p{text-shadow:0 2px 18px rgba(0,0,0,.55)}
+.hero .in{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;max-width:1180px;margin:0 auto;padding:80px 20px 0}
+.hero .eyebrow{color:var(--gold2)}
+.hero h1{font-size:clamp(36px,6.4vw,74px);margin:18px 0;max-width:780px}
+.hero h1 em{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold2);font-weight:500}
+.hero p{max-width:520px;font-size:17px;opacity:.92}
+.hero .acts{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+.dots{position:absolute;z-index:3;bottom:34px;left:50%;transform:translateX(-50%);display:flex;gap:10px}
+.dots button{width:34px;height:3px;border:0;background:rgba(255,255,255,.35)}
+.dots button.on{background:var(--gold2)}
+
+/* câu chuyện */
+.story .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:70px;align-items:center}
+.collage{position:relative;padding:0 40px 60px 0}
+.collage .a{aspect-ratio:4/3;object-fit:cover;width:100%;box-shadow:0 30px 60px -30px rgba(59,42,31,.5)}
+.collage .b{position:absolute;right:0;bottom:0;width:48%;aspect-ratio:1;object-fit:cover;border:8px solid var(--paper);box-shadow:0 20px 40px -20px rgba(59,42,31,.5)}
+.collage .stamp{position:absolute;left:-14px;top:-14px;background:var(--forest);color:#f3e6cf;padding:16px 18px;text-align:center;font-family:'Cormorant Garamond',serif;line-height:1.2}
+.collage .stamp b{display:block;font-size:30px;font-family:'Playfair Display',serif;font-weight:500;color:var(--gold2)}
+.story h2{font-size:clamp(28px,3.6vw,40px);margin:10px 0 22px}
+.story p{color:var(--ink2);margin-bottom:16px}
+.quote-line{border-left:2px solid var(--gold);padding:4px 0 4px 18px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--ink);margin:26px 0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px;border-top:1px solid var(--line);padding-top:26px}
+.stats b{display:block;font-family:'Playfair Display',serif;font-size:32px;font-weight:500;color:var(--gold)}
+.stats span{font-size:13px;color:var(--mute)}
+
+/* hành trình */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line);transition:.35s}
+.step:hover{transform:translateY(-6px);box-shadow:0 24px 40px -24px rgba(59,42,31,.45)}
+.step .ph{aspect-ratio:4/3;overflow:hidden}
+.step .ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.step:hover .ph img{transform:scale(1.07)}
+.step .tx{padding:22px 22px 26px;position:relative}
+.step .tx:before{counter-increment:s;content:"0" counter(s);position:absolute;top:-26px;right:18px;font-family:'Playfair Display',serif;font-size:44px;color:var(--gold2);text-shadow:0 2px 0 var(--card)}
+.step h3{font-size:19px;margin-bottom:6px}
+.step p{font-size:14px;color:var(--ink2)}
+
+/* nghệ nhân */
+.artisan{background:var(--forest);color:#efe3cc}
+.artisan .grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
+.artisan .portrait{position:relative}
+.artisan .portrait img{aspect-ratio:3/4;object-fit:cover;width:100%;object-position:center 30%}
+.artisan .portrait:after{content:"";position:absolute;inset:16px;border:1px solid rgba(201,164,106,.6);pointer-events:none}
+.artisan h2{font-size:clamp(28px,3.6vw,40px);margin:10px 0 20px;color:#fff}
+.artisan p{opacity:.85;margin-bottom:14px}
+.artisan blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2.4vw,26px);color:var(--gold2);margin:24px 0;line-height:1.5}
+.artisan blockquote cite{display:block;font-family:'Be Vietnam Pro',sans-serif;font-style:normal;font-size:13px;letter-spacing:.15em;color:#cdbb9c;margin-top:10px}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.thumbs img{aspect-ratio:1;object-fit:cover;width:100%;cursor:zoom-in;transition:.3s;filter:saturate(.9)}
+.thumbs img:hover{filter:saturate(1.1);transform:scale(1.03)}
+
+/* video */
+.video{background:var(--night);color:#efe3cc;padding:90px 0}
+.video .title h2{color:#fff}
+.video .title p{color:#cdbb9c}
+.vgrid{display:grid;grid-template-columns:1fr minmax(260px,380px);gap:70px;align-items:center;max-width:1000px}
+.vtext h2{font-size:clamp(28px,3.6vw,40px);color:#fff;margin:10px 0 20px}
+.vtext p{color:#cdbb9c;margin-bottom:14px}
+.vtext .btn{color:#fff}
+@media(max-width:760px){.vgrid{grid-template-columns:1fr;gap:36px}.frame{width:100%;max-width:340px}}
+.frame{position:relative;aspect-ratio:9/16;width:100%;margin:0 auto;border:1px solid rgba(201,164,106,.4);background:#000 center/cover;cursor:pointer;overflow:hidden}
+.frame:before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35);transition:.3s}
+.frame:hover:before{background:rgba(0,0,0,.2)}
+.frame .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:86px;height:86px;border-radius:50%;border:1px solid var(--gold2);display:flex;align-items:center;justify-content:center;background:rgba(168,130,74,.25);backdrop-filter:blur(3px)}
+.frame .play:after{content:"";border-left:22px solid #fff;border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px}
+.frame .lbl{position:absolute;left:24px;bottom:20px;font-size:13px;letter-spacing:.2em;color:#fff;text-transform:uppercase}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* sản phẩm */
+.tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:40px}
+.tabs button{border:1px solid var(--line);background:var(--card);padding:9px 20px;font-size:14px;color:var(--ink2);transition:.25s}
+.tabs button.on,.tabs button:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.pcard{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;transition:.35s}
+.pcard:hover{box-shadow:0 26px 44px -26px rgba(59,42,31,.5);transform:translateY(-4px)}
+.pcard .ph{aspect-ratio:1;overflow:hidden;background:#efe7da}
+.pcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.pcard:hover .ph img{transform:scale(1.06)}
+.pcard .bd{padding:18px 18px 20px;display:flex;flex-direction:column;gap:4px;flex:1}
+.pcard .tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.pcard h3{font-size:18px}
+.pcard p{font-size:13px;color:var(--mute);flex:1}
+.pcard .row{display:flex;justify-content:space-between;align-items:center;margin-top:12px;gap:10px}
+.price{font-weight:500;color:var(--ink);font-size:16px}
+.order{padding:9px 16px;background:var(--ink);color:#fff;border:0;font-size:13px;letter-spacing:.05em;transition:.25s}
+.order:hover{background:var(--gold)}
+.pcard.hide{display:none}
+
+/* showroom */
+.show{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:14px}
+.show img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;transition:.4s}
+.show img:hover{filter:brightness(1.07)}
+.show .big{grid-row:span 2}
+.show .wide{grid-column:span 2}
+.show-note{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:30px;padding:24px 28px;background:var(--card);border:1px solid var(--line)}
+.show-note b{font-family:'Playfair Display',serif;font-weight:500;font-size:20px}
+
+/* cam kết */
+.pledge{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.pl{text-align:center;padding:34px 20px;border:1px solid var(--line);background:var(--card)}
+.pl .ic{width:58px;height:58px;margin:0 auto 14px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Playfair Display',serif;font-size:22px}
+.pl h3{font-size:18px;margin-bottom:6px}
+.pl p{font-size:14px;color:var(--ink2)}
+
+/* liên hệ */
+.contact .grid{display:grid;grid-template-columns:1fr 1.2fr;gap:50px}
+.cinfo p{margin-bottom:18px;color:var(--ink2)}
+.cinfo b{display:block;font-weight:500;color:var(--gold);font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+.map{min-height:360px;border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;min-height:360px;border:0;filter:sepia(.25)}
+
+footer{background:var(--night);color:#cdbb9c;padding:56px 0 30px;text-align:center;font-size:14px}
+footer img{height:120px;margin:0 auto 18px}
+footer .fl{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin:18px 0;font-size:13px}
+footer .cp{border-top:1px solid #3a2e25;padding-top:20px;margin-top:24px;font-size:12px;opacity:.7}
+
+/* nút nổi */
+.float{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
+.float a{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:600;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.float .z{background:#0068ff}
+.float .p{background:var(--gold)}
+
+/* modal đặt hàng */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(20,14,9,.72);backdrop-filter:blur(3px)}
+.modal.open{display:flex}
+.box{background:var(--paper);width:100%;max-width:860px;max-height:94vh;overflow:auto;display:grid;grid-template-columns:1fr 1fr;position:relative;animation:pop .35s}
+@keyframes pop{from{opacity:0;transform:translateY(20px)}}
+.box .x{position:absolute;right:10px;top:8px;background:none;border:0;font-size:30px;color:var(--ink2);line-height:1;z-index:2}
+.box .l{padding:30px;border-right:1px solid var(--line)}
+.box .r{padding:30px;background:var(--card);text-align:center}
+.box .pimg{width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:16px}
+.box h3{font-size:22px}
+.qty{display:flex;align-items:center;gap:0;margin:16px 0;border:1px solid var(--line);width:max-content}
+.qty button{width:40px;height:40px;border:0;background:var(--card);font-size:18px}
+.qty input{width:56px;height:40px;border:0;border-left:1px solid var(--line);border-right:1px solid var(--line);text-align:center;font:inherit;background:#fff}
+.sum{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px;margin-top:6px}
+.sum b{font-size:20px;color:var(--gold);font-weight:500}
+.steps-pay{font-size:13px;color:var(--ink2);margin-top:16px;padding-left:18px}
+.qr{max-width:230px;margin:10px auto 14px;border:1px solid var(--line);background:#fff;padding:6px}
+.bank{font-size:14px;text-align:left;border:1px solid var(--line);background:#fff}
+.bank div{display:flex;justify-content:space-between;gap:10px;padding:9px 14px;border-bottom:1px solid var(--line)}
+.bank div:last-child{border:0}
+.bank span{color:var(--mute)}
+.bank b{font-weight:500;text-align:right}
+.mini{background:none;border:1px solid var(--gold);color:var(--gold);font-size:11px;padding:2px 8px;margin-left:6px}
+.box .zalo{display:block;margin-top:16px;padding:12px;background:#0068ff;color:#fff;font-size:14px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:110;background:rgba(10,7,5,.92);display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
+.lb.open{display:flex}
+.lb img{max-height:90vh;max-width:100%}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 1s,transform 1s}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .pgrid{grid-template-columns:repeat(3,1fr)}
+  .steps,.pledge{grid-template-columns:repeat(2,1fr)}
+  .story .grid,.artisan .grid,.contact .grid{grid-template-columns:1fr;gap:44px}
+  .artisan .portrait{max-width:420px}
+  .burger{display:block}
+  nav ul{display:none;position:absolute;top:76px;left:0;right:0;background:var(--paper);color:var(--ink);flex-direction:column;padding:24px;gap:18px;box-shadow:0 10px 20px rgba(0,0,0,.1)}
+  nav ul.open{display:flex}
+  section{padding:72px 0}
+}
+@media(max-width:720px){
+  .pgrid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .show{grid-template-columns:1fr 1fr;grid-template-rows:200px 160px 160px}
+  .show .big{grid-column:span 2;grid-row:auto}
+  .show .wide{grid-column:span 2}
+  .box{grid-template-columns:1fr}
+  .box .l{border-right:0;border-bottom:1px solid var(--line)}
+  .brand b{font-size:16px}
+  .collage{padding:0 20px 40px 0}
+}
+@media(max-width:460px){
+  .steps,.pledge{grid-template-columns:1fr}
+  .pcard .row{flex-direction:column;align-items:stretch}
+  .stats b{font-size:26px}
+}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <img class="w" src="anh/logo-vang-icon.png" alt="">
+      <img class="b" src="anh/logo-nau-icon.png" alt="">
+      <span><b>Trầm Hương Vạn Thắng</b><small>Làng nghề di sản</small></span>
+    </a>
+    <nav>
+      <button class="burger" aria-label="Mở menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+      <ul id="menu" onclick="if(event.target.tagName==='A')this.classList.remove('open')">
+        <li><a href="#cau-chuyen">Câu chuyện</a></li>
+        <li><a href="#hanh-trinh">Hành trình</a></li>
+        <li><a href="#nghe-nhan">Nghệ nhân</a></li>
+        <li><a href="#san-pham">Sản phẩm</a></li>
+        <li><a href="#showroom">Showroom</a></li>
+        <li><a href="#lien-he" class="nav-cta">LIÊN HỆ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="slide on" style="background-image:url(anh/xuong-tram.jpg)"></div>
+  <div class="slide" style="background-image:url(anh/sp-nhang-hao-hang.jpg)"></div>
+  <div class="slide" style="background-image:url(anh/showroom-slogan.jpg)"></div>
+  <div class="slide" style="background-image:url(anh/rung-tram.jpg)"></div>
+  <div class="in">
+    <div class="eyebrow">Vạn Thắng · Vạn Ninh · Khánh Hòa</div>
+    <h1>Từ làng nghề Vạn Thắng <em>đến di sản xứ trầm</em></h1>
+    <p>Mỗi nén trầm là tâm huyết của những đôi bàn tay nghệ nhân, làm thủ công từ trầm thật của đất Khánh Hòa.</p>
+    <div class="acts">
+      <a href="#san-pham" class="btn solid">XEM SẢN PHẨM</a>
+      <a href="#video" class="btn light">▶ XEM PHIM LÀNG NGHỀ</a>
+    </div>
+  </div>
+  <div class="dots" id="dots"></div>
+</section>
+
+<!-- CÂU CHUYỆN -->
+<section class="story cloud-bg" id="cau-chuyen">
+  <div class="wrap grid">
+    <div class="collage reveal">
+      <img class="a" src="anh/nha-lang-nghe.jpg" alt="Một nhà làm trầm ở làng Vạn Thắng" loading="lazy">
+      <img class="b" src="anh/tram-tho.jpg" alt="Trầm hương tự nhiên vừa khai thác" loading="lazy">
+      <div class="stamp">Làng nghề<b>di sản</b>Khánh Hòa</div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">Câu chuyện làng nghề</div>
+      <h2>Hương trầm gìn giữ qua nhiều thế hệ</h2>
+      <p>Ở xã Vạn Thắng, Khánh Hòa, nghề làm trầm được cha ông truyền lại cho con cháu. Người trong làng vẫn vào rừng tìm trầm, ngồi bên hiên nhà chẻ từng thớ gỗ, se từng cây nhang và nặn từng viên nụ bằng tay.</p>
+      <p>Trầm Hương Vạn Thắng được lập ra để giữ lấy cái nghề ấy. Chúng tôi đưa hương trầm thật từ làng nghề đến từng gia đình, với nguồn gốc rõ ràng và cách làm thủ công.</p>
+      <div class="quote-line">“Trầm thật từ làng nghề – thơm thanh, cháy sạch, an lòng người thắp.”</div>
+      <div class="stats">
+        <div><b>100%</b><span>Trầm hương thật</span></div>
+        <div><b>Thủ công</b><span>Từng nén, từng nụ</span></div>
+        <div><b>Khánh Hòa</b><span>Nguồn gốc rõ ràng</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HÀNH TRÌNH -->
+<section id="hanh-trinh">
+  <div class="wrap">
+    <div class="title reveal">
+      <div class="eyebrow">Hành trình một nén trầm</div>
+      <h2>Từ rừng già đến bàn thờ gia đình</h2>
+      <p>Bốn công đoạn, tất cả đều làm bằng tay ở làng nghề Vạn Thắng.</p>
+      <div class="orn"><img src="anh/logo-nau-icon.png" alt=""></div>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><div class="ph"><img src="anh/tim-tram-rung.jpg" alt="Tìm trầm trong rừng" loading="lazy"></div><div class="tx"><h3>Tìm trầm</h3><p>Người thợ vào rừng, tìm những thân dó đã tích tụ nhựa trầm qua năm tháng.</p></div></div>
+      <div class="step"><div class="ph"><img src="anh/che-tram.jpg" alt="Chẻ trầm" loading="lazy"></div><div class="tx"><h3>Chẻ & đục trầm</h3><p>Chẻ, đục bỏ phần gỗ trắng, giữ lại phần trầm có dầu thơm.</p></div></div>
+      <div class="step"><div class="ph"><img src="anh/ban-tay-nu-tram.jpg" alt="Nặn nụ trầm thủ công" loading="lazy"></div><div class="tx"><h3>Se nhang, nặn nụ</h3><p>Bột trầm được se thành nhang, nặn thành nụ, phơi khô tự nhiên.</p></div></div>
+      <div class="step"><div class="ph"><img src="anh/sp-nhang-hao-hang-2.jpg" alt="Đóng hộp sản phẩm" loading="lazy"></div><div class="tx"><h3>Đóng hộp, trao tay</h3><p>Kiểm tra từng lô, đóng hộp chỉn chu rồi gửi đến tay khách.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NGHỆ NHÂN -->
+<section class="artisan" id="nghe-nhan">
+  <div class="wrap grid">
+    <div class="portrait reveal"><img src="anh/nghe-nhan-cuoi.jpg" alt="Nghệ nhân làng nghề Vạn Thắng" loading="lazy"></div>
+    <div class="reveal">
+      <div class="eyebrow">Nghệ nhân làng nghề</div>
+      <h2>Đôi bàn tay làm nên hương trầm</h2>
+      <p>Nghệ nhân ở Vạn Thắng nhìn màu gỗ, ngửi mùi dầu là biết trầm tốt hay xấu. Cái biết ấy họ học từ cha ông và tích lại qua bao năm làm nghề.</p>
+      <p>Trầm Hương Vạn Thắng làm việc trực tiếp với các hộ trong làng. Nhờ vậy nghề được giữ, người thợ có thu nhập ổn định, còn khách thì yên tâm về từng sản phẩm.</p>
+      <blockquote>“Làm trầm là làm bằng cái tâm. Trầm thật thì thơm thật, mình không dối được người thắp hương.”<cite>— NGHỆ NHÂN LÀNG VẠN THẮNG</cite></blockquote>
+      <div class="thumbs">
+        <img src="anh/nghe-nhan-lam-nu.jpg" alt="Nghệ nhân nặn nụ trầm" loading="lazy">
+        <img src="anh/duc-tram.jpg" alt="Nghệ nhân đục trầm" loading="lazy">
+        <img src="anh/lam-nhang.jpg" alt="Các bà, các mẹ làm nhang" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video" id="video">
+  <div class="wrap vgrid">
+    <div class="vtext reveal">
+      <div class="eyebrow">Phim làng nghề</div>
+      <h2>Phu trầm – mắt xích đầu tiên</h2>
+      <p>Trước khi thành một nén nhang hay viên nụ, mỗi mẩu trầm đều bắt đầu từ những chuyến đi rừng của người phu trầm.</p>
+      <p>Họ băng đèo, lội suối, đọc từng thân dó để tìm nơi trầm kết tụ. Đó là mắt xích đầu tiên, cũng là mắt xích vất vả nhất, của nghề trầm Vạn Thắng.</p>
+      <button class="btn solid" id="vbtn" style="margin-top:14px">▶ XEM PHIM</button>
+    </div>
+    <div class="frame reveal" id="frame" style="background-image:url(anh/rung-tram.jpg)">
+      <div class="play"></div>
+      <div class="lbl">Phu trầm là mắt xích đầu tiên</div>
+    </div>
+  </div>
+</section>
+
+<!-- SẢN PHẨM -->
+<section class="cloud-bg" id="san-pham">
+  <div class="wrap">
+    <div class="title reveal">
+      <div class="eyebrow">Sản phẩm</div>
+      <h2>Trầm thật từ làng nghề</h2>
+      <p>Bấm <b>Đặt hàng</b> để xem mã QR thanh toán và gửi đơn qua Zalo.</p>
+      <div class="orn"><img src="anh/logo-nau-icon.png" alt=""></div>
+    </div>
+    <div class="tabs" id="tabs">
+      <button class="on" data-f="all">Tất cả</button>
+      <button data-f="nhang">Nhang trầm</button>
+      <button data-f="nu">Nụ trầm</button>
+      <button data-f="cao-cap">Thanh trầm & Vân mây</button>
+      <button data-f="combo">Hộp quà</button>
+      <button data-f="tram-canh">Trầm cảnh</button>
+    </div>
+    <div class="pgrid" id="pgrid"></div>
+    <p style="text-align:center;color:var(--mute);font-size:13px;margin-top:26px">* Giá trên web là giá tham khảo. Vui lòng nhắn Zalo để được báo giá chính xác.</p>
+  </div>
+</section>
+
+<!-- SHOWROOM -->
+<section id="showroom">
+  <div class="wrap">
+    <div class="title reveal">
+      <div class="eyebrow">Showroom</div>
+      <h2>Không gian thưởng trầm</h2>
+      <p>Ghé showroom để ngửi hương, xem trầm cảnh và chọn quà.</p>
+    </div>
+    <div class="show reveal">
+      <img class="big" src="anh/showroom-1.jpg" alt="Showroom Trầm Hương Vạn Thắng" loading="lazy">
+      <img src="anh/showroom-2.jpg" alt="Kệ trưng bày sản phẩm" loading="lazy">
+      <img src="anh/tram-canh-2.jpg" alt="Trầm cảnh trưng bày" loading="lazy" style="object-position:center 40%">
+      <img class="wide" src="anh/showroom-slogan.jpg" alt="Từ làng nghề Vạn Thắng đến di sản xứ trầm" loading="lazy">
+    </div>
+    <div class="show-note reveal">
+      <div><b>Showroom Trầm Hương Vạn Thắng</b><div style="color:var(--ink2);font-size:14px">[Địa chỉ showroom – cập nhật sau] · Mở cửa 8:00 – 18:00 hằng ngày</div></div>
+      <a href="#lien-he" class="btn solid">CHỈ ĐƯỜNG</a>
+    </div>
+  </div>
+</section>
+
+<!-- CAM KẾT -->
+<section class="cloud-bg" style="padding:80px 0">
+  <div class="wrap">
+    <div class="pledge reveal">
+      <div class="pl"><div class="ic">真</div><h3>Trầm thật</h3><p>Làm từ trầm hương tự nhiên, không pha bột gỗ tạp.</p></div>
+      <div class="pl"><div class="ic">手</div><h3>Thủ công</h3><p>Từng nén, từng nụ đều qua tay nghệ nhân.</p></div>
+      <div class="pl"><div class="ic">淨</div><h3>An toàn</h3><p>Không hóa chất tạo mùi, khói nhẹ, cháy sạch.</p></div>
+      <div class="pl"><div class="ic">源</div><h3>Rõ nguồn gốc</h3><p>Làm tại làng nghề Vạn Thắng, Khánh Hòa.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIÊN HỆ -->
+<section class="contact" id="lien-he">
+  <div class="wrap">
+    <div class="title reveal">
+      <div class="eyebrow">Liên hệ</div>
+      <h2>Kết nối với làng nghề</h2>
+    </div>
+    <div class="grid">
+      <div class="cinfo reveal">
+        <p><b>Địa chỉ</b>[Địa chỉ làng nghề / showroom] – Vạn Thắng, Vạn Ninh, Khánh Hòa</p>
+        <p><b>Hotline / Zalo</b>[0xxx xxx xxx]</p>
+        <p><b>Email</b>[email@tramhuongvanthang.vn]</p>
+        <p><b>Giờ mở cửa</b>8:00 – 18:00 · Thứ 2 đến Chủ nhật</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn solid" href="tel:0000000000">GỌI NGAY</a>
+          <a class="btn" href="https://zalo.me/0000000000" target="_blank" rel="noopener">NHẮN ZALO</a>
+        </div>
+      </div>
+      <div class="map reveal"><iframe loading="lazy" title="Bản đồ Vạn Thắng, Khánh Hòa" src="https://www.google.com/maps?q=V%E1%BA%A1n+Th%E1%BA%AFng,+V%E1%BA%A1n+Ninh,+Kh%C3%A1nh+H%C3%B2a&output=embed"></iframe></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="anh/logo-vang.png" alt="Trầm Hương Vạn Thắng – Làng nghề di sản">
+    <div>Từ làng nghề Vạn Thắng đến di sản xứ trầm</div>
+    <div class="fl"><a href="#cau-chuyen">Câu chuyện</a><a href="#nghe-nhan">Nghệ nhân</a><a href="#san-pham">Sản phẩm</a><a href="#showroom">Showroom</a><a href="#lien-he">Liên hệ</a></div>
+    <div class="cp">© 2026 Trầm Hương Vạn Thắng · Làng nghề di sản Khánh Hòa</div>
+  </div>
+</footer>
+
+<div class="float">
+  <a class="p" href="tel:0000000000" aria-label="Gọi điện">Gọi</a>
+  <a class="z" href="https://zalo.me/0000000000" target="_blank" rel="noopener" aria-label="Zalo">Zalo</a>
+</div>
+
+<!-- MODAL ĐẶT HÀNG: mã QR chỉ hiện ở đây -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mName">
+  <div class="box">
+    <button class="x" id="mClose" aria-label="Đóng">×</button>
+    <div class="l">
+      <img class="pimg" id="mImg" alt="">
+      <div class="eyebrow" id="mTag"></div>
+      <h3 id="mName"></h3>
+      <div style="color:var(--mute);font-size:14px" id="mDesc"></div>
+      <div class="qty"><button id="qMinus" aria-label="Giảm">−</button><input id="qty" type="number" min="1" value="1" aria-label="Số lượng"><button id="qPlus" aria-label="Tăng">+</button></div>
+      <div class="sum"><span>Tạm tính</span><b id="mTotal"></b></div>
+      <ol class="steps-pay">
+        <li>Quét mã QR bên cạnh bằng app ngân hàng.</li>
+        <li>Nội dung chuyển khoản: <b id="mNote"></b></li>
+        <li>Nhắn Zalo kèm ảnh chuyển khoản và địa chỉ nhận hàng.</li>
+      </ol>
+    </div>
+    <div class="r">
+      <div class="eyebrow">Thanh toán chuyển khoản</div>
+      <img class="qr" src="anh/qr-thanh-toan.jpg" alt="Mã QR chuyển khoản Vietcombank">
+      <div class="bank">
+        <div><span>Ngân hàng</span><b>Vietcombank</b></div>
+        <div><span>Chủ tài khoản</span><b>NGUYEN THI CAM NHUNG</b></div>
+        <div><span>Số tài khoản</span><b>1047830084 <button class="mini" data-copy="1047830084">Chép</button></b></div>
+        <div><span>Số tiền</span><b id="mAmount"></b></div>
+      </div>
+      <a class="zalo" href="https://zalo.me/0000000000" target="_blank" rel="noopener">Gửi đơn qua Zalo</a>
+    </div>
+  </div>
+</div>
+
+<div class="lb" id="lb"><img alt=""></div>
+
+<script>
+/* ===== DANH SÁCH SẢN PHẨM – sửa tên / giá / ảnh tại đây (giá = 0 nghĩa là "Liên hệ") ===== */
+var PRODUCTS=[
+ {id:'NDS', f:'nhang',     tag:'Nhang trầm', name:'Nhang Trầm Hương Di Sản',   desc:'Nhang trầm thật từ làng nghề, hương thanh, cháy đều.', price:250000, img:'anh/sp-nhang-di-san.jpg'},
+ {id:'NHH', f:'nhang',     tag:'Nhang trầm', name:'Nhang Trầm Hương Hảo Hạng', desc:'Trầm chọn lọc, hương sâu, hợp thờ cúng hằng ngày.',  price:350000, img:'anh/sp-nhang-hao-hang.jpg'},
+ {id:'NUDS',f:'nu',        tag:'Nụ trầm',    name:'Trầm Hương Nụ Di Sản',      desc:'Hộp nụ trầm thủ công, hương dịu.',                  price:220000, img:'anh/sp-nu-di-san.jpg'},
+ {id:'NUHH',f:'nu',        tag:'Nụ trầm',    name:'Trầm Hương Nụ Hảo Hạng',    desc:'Hộp 50 nụ, mỗi nụ cháy 15–20 phút.',               price:320000, img:'anh/sp-nu-hao-hang.jpg'},
+ {id:'NUTP',f:'nu',        tag:'Nụ trầm',    name:'Trầm Hương Nụ Tuyệt Phẩm',  desc:'Hộp 50 nụ, dòng tinh hoa, đẳng cấp.',              price:550000, img:'anh/sp-nu-tuyet-pham.jpg'},
+ {id:'TT',  f:'cao-cap',   tag:'Thanh trầm', name:'Thanh Trầm',                desc:'Thanh trầm xông, thuần khiết, tĩnh tại.',          price:450000, img:'anh/sp-thanh-tram.jpg'},
+ {id:'VM',  f:'cao-cap',   tag:'Vân mây',    name:'Trầm Vân Mây',              desc:'Hộp 20 vân trầm tuyệt phẩm.',                      price:650000, img:'anh/sp-van-may.jpg'},
+ {id:'ANT', f:'combo',     tag:'Hộp quà',    name:'An Nhiên Trầm',             desc:'Hộp quà thưởng trầm – lắng tâm.',                  price:890000, img:'anh/combo-an-nhien.jpg'},
+ {id:'DXT', f:'combo',     tag:'Hộp quà',    name:'Duyên Xứ Trầm',             desc:'Hộp quà chạm hương trầm xứ Khánh Hòa.',            price:990000, img:'anh/combo-duyen-xu-tram.jpg'},
+ {id:'HKH', f:'combo',     tag:'Hộp quà',    name:'Hương Khánh Hòa',           desc:'Hộp quà đặc sản trầm hương Khánh Hòa.',           price:1190000,img:'anh/combo-huong-khanh-hoa.jpg'},
+ {id:'TP',  f:'tram-canh', tag:'Trầm cảnh',  name:'Tượng Phật Trầm Hương',     desc:'Tượng chạm khắc thủ công từ trầm tự nhiên.',       price:0,      img:'anh/sp-tuong-phat.jpg'},
+ {id:'TC',  f:'tram-canh', tag:'Trầm cảnh',  name:'Trầm Cảnh Tự Nhiên',        desc:'Trầm cảnh nguyên khối, mỗi tác phẩm là duy nhất.', price:0,      img:'anh/tram-canh-1.jpg'}
+];
+function money(n){return n?n.toLocaleString('vi-VN')+'₫':'Liên hệ'}
+
+var grid=document.getElementById('pgrid');
+grid.innerHTML=PRODUCTS.map(function(p,i){
+  return '<div class="pcard" data-f="'+p.f+'"><div class="ph"><img src="'+p.img+'" alt="'+p.name+'" loading="lazy"></div>'+
+  '<div class="bd"><span class="tag">'+p.tag+'</span><h3>'+p.name+'</h3><p>'+p.desc+'</p>'+
+  '<div class="row"><span class="price">'+money(p.price)+'</span><button class="order" data-i="'+i+'">Đặt hàng</button></div></div></div>';
+}).join('');
+
+/* lọc danh mục */
+document.getElementById('tabs').onclick=function(e){
+  var b=e.target.closest('button');if(!b)return;
+  this.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});
+  grid.querySelectorAll('.pcard').forEach(function(c){c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.f!==b.dataset.f)});
+};
+
+/* modal đặt hàng + QR */
+var modal=document.getElementById('modal'),qty=document.getElementById('qty'),cur=null;
+function update(){
+  var q=Math.max(1,parseInt(qty.value)||1);qty.value=q;
+  var t=cur.price*q;
+  document.getElementById('mTotal').textContent=money(t);
+  document.getElementById('mAmount').textContent=cur.price?money(t):'Theo báo giá';
+  document.getElementById('mNote').textContent=cur.id+' x'+q+' + Tên + SĐT';
+}
+grid.onclick=function(e){
+  var b=e.target.closest('.order');if(!b)return;
+  cur=PRODUCTS[b.dataset.i];qty.value=1;
+  document.getElementById('mImg').src=cur.img;
+  document.getElementById('mImg').alt=cur.name;
+  document.getElementById('mTag').textContent=cur.tag;
+  document.getElementById('mName').textContent=cur.name;
+  document.getElementById('mDesc').textContent=cur.desc;
+  update();modal.classList.add('open');document.body.style.overflow='hidden';
+};
+function closeM(){modal.classList.remove('open');document.body.style.overflow=''}
+document.getElementById('mClose').onclick=closeM;
+modal.onclick=function(e){if(e.target===modal)closeM()};
+document.getElementById('qMinus').onclick=function(){qty.value=+qty.value-1;update()};
+document.getElementById('qPlus').onclick=function(){qty.value=+qty.value+1;update()};
+qty.oninput=update;
+document.addEventListener('click',function(e){
+  var c=e.target.closest('[data-copy]');if(!c)return;
+  var t=c.dataset.copy;try{navigator.clipboard.writeText(t)}catch(err){}
+  c.textContent='Đã chép';setTimeout(function(){c.textContent='Chép'},1500);
+});
+
+/* slideshow hero */
+var slides=document.querySelectorAll('.slide'),dots=document.getElementById('dots'),si=0,timer;
+slides.forEach(function(_,i){var d=document.createElement('button');d.setAttribute('aria-label','Ảnh '+(i+1));d.onclick=function(){go(i)};dots.appendChild(d)});
+function go(i){slides[si].classList.remove('on');dots.children[si].classList.remove('on');si=i;slides[si].classList.add('on');dots.children[si].classList.add('on');clearInterval(timer);timer=setInterval(function(){go((si+1)%slides.length)},6000)}
+go(0);
+
+/* video: chỉ tải khi bấm */
+var frame=document.getElementById('frame');
+document.getElementById('vbtn').onclick=function(){frame.click()};
+frame.onclick=function(){
+  if(this.querySelector('iframe'))return;
+  this.innerHTML='<iframe src="https://drive.google.com/file/d/1tfZWH03KrV4rbjdiBwHtGLea1505mIav/preview" allow="autoplay; fullscreen" allowfullscreen title="Phu trầm là mắt xích đầu tiên – Trầm Hương Vạn Thắng"></iframe>';
+};
+
+/* xem ảnh lớn */
+var lb=document.getElementById('lb');
+document.querySelectorAll('.thumbs img,.show img').forEach(function(im){im.onclick=function(){lb.querySelector('img').src=im.src;lb.classList.add('open')}});
+lb.onclick=function(){lb.classList.remove('open')};
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeM();lb.classList.remove('open')}});
+
+/* header + hiệu ứng cuộn */
+var hd=document.getElementById('hd');
+function onScroll(){hd.classList.toggle('solid',scrollY>innerHeight*0.6||document.getElementById('menu').classList.contains('open'))}
+addEventListener('scroll',onScroll);onScroll();
+document.querySelector('.burger').addEventListener('click',onScroll);
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
